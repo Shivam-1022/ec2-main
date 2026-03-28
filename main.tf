@@ -41,7 +41,7 @@ resource "aws_instance" "myinstance" {
 
   ami           = var.myami
   instance_type = var.myinstance
-  instance_count = var.instance_count
+  count = var.instance_count
     lifecycle {
     create_before_destroy = true
   }
@@ -55,6 +55,6 @@ resource "aws_instance" "myinstance" {
               systemctl enable nginx
               EOF
   tags = {
-    Name = "tom-${random_string.mtstring.result}"
+    Name = "tom-${random_string.mtstring.result}-${count.index + 1}"
   }
 }
