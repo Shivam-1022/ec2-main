@@ -1,5 +1,5 @@
 variable "myami" {
-  description = "print your region specfic ami id"
+  description = "printt your region specfic ami id"
   default = "ami-07062e2a343acc423"
 }
 
