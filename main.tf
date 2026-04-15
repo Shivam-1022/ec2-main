@@ -36,7 +36,7 @@ resource "aws_instance" "myinstance" {
 
   ami           = var.myami
   instance_type = var.myinstance
-  security_groups = [aws_security_group.mysg.name]
+  vpc_security_group_ids = [aws_security_group.mysg.id]
   user_data     = <<-EOF
               #!/bin/bash
               apt update -y
